@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <h1>Registro do usuário</h1>
+
+    <form action="{{path("user_register")}}" method="POST">
+        {{form_widget(form)}}
+        <input type="submit" value="Enviar" />
+    </form>
+
+{%endblock%}
