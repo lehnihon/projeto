@@ -5,8 +5,12 @@
     <h1>Registro do usuário</h1>
 
     <form action="{{path("user_register")}}" method="POST">
-        {{form_widget(form)}}
-        <input type="submit" value="Enviar" />
+        {{form_errors(form)}}
+        {{form_row(form.username)}}
+        {{form_row(form.password.first, {'label':'Password'})}}
+        {{form_row(form.password.second, {'label':'Repeat Password'})}}
+        {{form_rest(form)}}
+        <input type="submit" value="Enviar" formnovalidate />
     </form>
 
 {%endblock%}

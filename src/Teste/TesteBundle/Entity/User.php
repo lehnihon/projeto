@@ -4,6 +4,7 @@ namespace Teste\TesteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -24,8 +25,14 @@ class User implements UserInterface
 
     /**
      * @var string
-     *
      * @ORM\Column(name="username", type="string", length=255)
+     * @Assert\NotBlank(message="Entre com um usuário!")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "50",
+     *      minMessage = "Username deve ter mais que {{ limit }} caracteres",
+     *      maxMessage = "Username deve ter menos que {{ limit }} caracteres"
+     * )
      */
     private $username;
 

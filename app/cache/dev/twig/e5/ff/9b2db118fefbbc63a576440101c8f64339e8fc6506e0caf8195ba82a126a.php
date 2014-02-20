@@ -37,9 +37,25 @@ class __TwigTemplate_e5ff9b2db118fefbbc63a576440101c8f64339e8fc6506e0caf8195ba82
         echo "\" method=\"POST\">
         ";
         // line 8
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'errors');
         echo "
-        <input type=\"submit\" value=\"Enviar\" />
+        ";
+        // line 9
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "username"), 'row');
+        echo "
+        ";
+        // line 10
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getContext($context, "form"), "password"), "first"), 'row', array("label" => "Password"));
+        echo "
+        ";
+        // line 11
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getContext($context, "form"), "password"), "second"), 'row', array("label" => "Repeat Password"));
+        echo "
+        ";
+        // line 12
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
+        echo "
+        <input type=\"submit\" value=\"Enviar\" formnovalidate />
     </form>
 
 ";
@@ -57,6 +73,6 @@ class __TwigTemplate_e5ff9b2db118fefbbc63a576440101c8f64339e8fc6506e0caf8195ba82
 
     public function getDebugInfo()
     {
-        return array (  40 => 8,  36 => 7,  31 => 4,  28 => 3,);
+        return array (  56 => 12,  52 => 11,  48 => 10,  44 => 9,  40 => 8,  36 => 7,  31 => 4,  28 => 3,);
     }
 }
