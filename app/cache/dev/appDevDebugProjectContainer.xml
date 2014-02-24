@@ -1539,7 +1539,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>530579e50a243</argument>
+            <argument>530aafc4ace6b</argument>
           </service>
         </argument>
       </argument>
@@ -1692,7 +1692,7 @@
                     <argument type="service" id="router" on-invalid="null"/>
                   </service>
                 </argument>
-                <argument>/</argument>
+                <argument>/login</argument>
               </service>
             </argument>
             <argument type="collection">
@@ -1779,7 +1779,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>530579e50a243</argument>
+            <argument>530aafc4ace6b</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2569,9 +2569,11 @@
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
       <argument type="collection">
         <argument key="Teste\TesteBundle\Entity\User" type="collection">
-          <argument key="class">%security.encoder.plain.class%</argument>
+          <argument key="class">%security.encoder.digest.class%</argument>
           <argument key="arguments" type="collection">
-            <argument>false</argument>
+            <argument>sha512</argument>
+            <argument>true</argument>
+            <argument>5000</argument>
           </argument>
         </argument>
       </argument>

@@ -52,4 +52,8 @@ class DefaultController extends Controller
      */
     public function loginCheckAction(){}
 
+     /** 
+     * @Route("/logout", name="logout")
+     */
+    public function logoutCheckAction(){}
 }

@@ -1,6 +1,6 @@
 security:
     encoders:
-        Teste\TesteBundle\Entity\User: plaintext
+        Teste\TesteBundle\Entity\User: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -18,7 +18,7 @@ security:
                 login_path: /login
             logout:
                 path:   /logout
-                target: /
+                target: /login
             anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
